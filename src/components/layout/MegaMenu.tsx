@@ -171,14 +171,10 @@ export function MegaMenu() {
 
                             <NavigationMenuItem>
                                 <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-zinc-400 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white")}>
-                                    <Link href="/products/nexus">Integrations</Link>
+                                    <Link href="/integrations">Integrations</Link>
                                 </NavigationMenuLink>
                             </NavigationMenuItem>
-                            <NavigationMenuItem>
-                                <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-zinc-400 hover:text-white hover:bg-white/5 focus:bg-white/5 focus:text-white")}>
-                                    <Link href="/enterprise">Enterprise</Link>
-                                </NavigationMenuLink>
-                            </NavigationMenuItem>
+
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger className="bg-transparent text-zinc-400 hover:text-white hover:bg-white/5 data-[state=open]:bg-white/5 data-[state=open]:text-white focus:bg-white/5 focus:text-white">
                                     Resources
@@ -193,13 +189,13 @@ export function MegaMenu() {
                                             <div className="flex flex-col space-y-4">
                                                 <h4 className="text-sm font-semibold tracking-tight text-white uppercase opacity-80">Knowledge Base</h4>
                                                 <Link href="/resources" className="block rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white">
-                                                    Blog &amp; Makaleler
+                                                    Blog & Articles
                                                 </Link>
                                                 <Link href="/resources" className="block rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white">
-                                                    Finansal Rehberler
+                                                    Financial Guides
                                                 </Link>
                                                 <Link href="/resources" className="block rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white">
-                                                    Sözlük (Glossary)
+                                                    Glossary
                                                 </Link>
                                             </div>
 
@@ -207,13 +203,13 @@ export function MegaMenu() {
                                             <div className="flex flex-col space-y-4">
                                                 <h4 className="text-sm font-semibold tracking-tight text-white uppercase opacity-80">Insights &amp; Proofs</h4>
                                                 <Link href="/resources" className="block rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white">
-                                                    Müşteri Başarı Hikayeleri
+                                                    Customer Success Stories
                                                 </Link>
                                                 <Link href="/resources" className="block rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white">
-                                                    Whitepapers (Teknik Raporlar)
+                                                    Whitepapers
                                                 </Link>
                                                 <Link href="/resources" className="block rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white">
-                                                    Otonom Finans Raporları
+                                                    Autonomous Finance Reports
                                                 </Link>
                                             </div>
 
@@ -223,16 +219,16 @@ export function MegaMenu() {
                                         <div className="w-[280px] bg-white/[0.02] border-l border-zinc-800/50 p-6">
                                             <Link href="/resources" className="group flex flex-col rounded-lg border border-zinc-800/60 bg-[#11121A] p-5 transition-all hover:border-[#E5F33D]/40 hover:bg-white/5">
                                                 <span className="mb-3 inline-block w-fit rounded-md bg-[#E5F33D]/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#E5F33D]">
-                                                    Yeni Rapor
+                                                    New Report
                                                 </span>
                                                 <span className="mb-2 text-sm font-bold text-white group-hover:text-[#E5F33D] transition-colors">
-                                                    2026 Enterprise CFO Beklentileri.
+                                                    2026 Enterprise CFO Outlook.
                                                 </span>
                                                 <p className="mb-4 text-xs leading-relaxed text-zinc-500">
-                                                    500+ CFO ile yapılan anket sonucunda otonom finansın geleceği.
+                                                    The future of autonomous finance based on a survey of 500+ CFOs.
                                                 </p>
                                                 <span className="mt-auto text-xs font-semibold text-[#E5F33D] transition-colors group-hover:text-white">
-                                                    Raporu İncele →
+                                                    Read Report →
                                                 </span>
                                             </Link>
                                         </div>

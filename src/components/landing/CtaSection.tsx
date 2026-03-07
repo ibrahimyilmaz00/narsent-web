@@ -17,14 +17,14 @@ export function CtaSection() {
                 <div className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center">
                     {/* Headline */}
                     <h2 className="mb-6 max-w-4xl text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-                        Finansal Operasyonlarınızı{" "}
-                        <span className="text-[#E5F33D]">Otonom</span> Hale Getirin.
+                        Make Your Financial Operations{" "}
+                        <span className="text-[#E5F33D]">Autonomous</span>.
                     </h2>
 
                     {/* Subtext */}
                     <p className="mb-12 max-w-2xl text-lg leading-relaxed text-zinc-400">
-                        Haftalar süren manuel raporlamalara ve görünmez nakit sızıntılarına son
-                        verin. Narsent ile geleceğin finansal altyapısına bugün geçin.
+                        Put an end to weeks of manual reporting and invisible cash leakage.
+                        Transition to the financial infrastructure of the future with Narsent — today.
                     </p>
 
                     {/* Action Buttons */}
@@ -33,13 +33,13 @@ export function CtaSection() {
                             href="/request-demo"
                             className="inline-flex h-12 w-full items-center justify-center rounded-lg bg-[#E5F33D] px-8 text-sm font-bold text-black transition-all duration-200 hover:scale-105 hover:shadow-[0_0_30px_rgba(229,243,61,0.25)] focus:outline-none focus:ring-2 focus:ring-[#E5F33D] focus:ring-offset-2 focus:ring-offset-[#0B0C10] sm:w-auto"
                         >
-                            Demoyu Planlayın
+                            Schedule a Demo
                         </Link>
                         <Link
                             href="/contact"
                             className="inline-flex h-12 w-full items-center justify-center rounded-lg border border-zinc-700 bg-transparent px-8 text-sm font-semibold text-zinc-300 transition-all duration-200 hover:border-zinc-500 hover:bg-white/5 hover:text-white focus:outline-none focus:ring-2 focus:ring-zinc-600 focus:ring-offset-2 focus:ring-offset-[#0B0C10] sm:w-auto"
                         >
-                            Uzmanla Görüşün
+                            Talk to an Expert
                         </Link>
                     </div>
 
@@ -47,7 +47,7 @@ export function CtaSection() {
                     <div className="flex items-center gap-2 text-center text-zinc-500">
                         <Check className="h-4 w-4 text-emerald-500" />
                         <span className="text-xs">
-                            Kurulum veya kredi kartı gerektirmez. ERP sistemlerinize anında entegre olur.
+                            No setup or credit card required. Integrates with your ERP systems instantly.
                         </span>
                     </div>
                 </div>

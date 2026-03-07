@@ -1,78 +1,84 @@
 "use client";
 
 import { useState } from "react";
-import { Check, ArrowRight, BookOpen, FileText, Newspaper, Rocket, Clock } from "lucide-react";
+import { ArrowRight, BookOpen, FileText, Newspaper, Rocket, Clock } from "lucide-react";
 import Link from "next/link";
 import { Reveal } from "@/src/components/ui/reveal";
 
-const categories = ["Tümü", "Müşteri Hikayeleri", "Blog", "Whitepapers", "Ürün Güncellemeleri"];
+const categories = ["All", "Customer Stories", "Blog", "Whitepapers", "Product Updates"];
 
 const articles = [
     {
+        slug: "dual-scoring-engine",
         category: "Whitepaper",
         readTime: "8 min read",
-        title: "Dual Scoring Engine: Geleneksel Kredi Skorlamasının Sonu",
+        title: "Dual Scoring Engine: The End of Traditional Credit Scoring",
         description:
-            "Narsent'in çift katmanlı puanlama motorunun, statik kredi skorlarına karşı nasıl %127 daha hassas risk tespiti sağladığını keşfedin.",
+            "Discover how Narsent's dual-layer scoring engine delivers 127% more precise risk detection compared to static credit scores.",
         color: "text-purple-400",
         bg: "bg-purple-500/10",
     },
     {
+        slug: "13-week-liquidity-playbook",
         category: "Blog",
         readTime: "5 min read",
-        title: "CFO'lar İçin 13 Haftalık Likidite Rehberi",
+        title: "13-Week Liquidity Playbook for CFOs",
         description:
-            "Rolling forecast yönteminin modern finans ekiplerinde nasıl uygulandığını ve Excel'den otonom zekaya geçişin adımlarını anlattık.",
+            "How rolling forecast methodology is applied in modern finance teams and the steps from Excel to autonomous intelligence.",
         color: "text-cyan-400",
         bg: "bg-cyan-500/10",
     },
     {
-        category: "Ürün Güncellemesi",
+        slug: "horizon-ai-v2-4",
+        category: "Product Update",
         readTime: "3 min read",
-        title: "Horizon AI v2.4: Otonom Root-Cause Analysis",
+        title: "Horizon AI v2.4: Autonomous Root-Cause Analysis",
         description:
-            "En son sürümde eklenen kök neden analizi motoru, nakit akışı sapmalarını saniyeler içinde kaynağına kadar izliyor.",
+            "The latest release introduces a root-cause analysis engine that traces cashflow deviations to their source in seconds.",
         color: "text-emerald-400",
         bg: "bg-emerald-500/10",
     },
     {
-        category: "Müşteri Hikayesi",
+        slug: "retail-giant-x-case-study",
+        category: "Customer Story",
         readTime: "6 min read",
-        title: "Perakende Devi X, Tahsilat Süresini %40 Kısalttı",
+        title: "Retail Giant X Cut Collection Times by 40%",
         description:
-            "500+ mağazalık bir perakende zincirinin Narsent Pre-emptive Alerting ile DSO'yu nasıl optimize ettiğini okuyun.",
+            "Read how a 500+ store retail chain optimized DSO using Narsent Pre-emptive Alerting.",
         color: "text-amber-400",
         bg: "bg-amber-500/10",
     },
     {
+        slug: "explainable-ai-in-finance",
         category: "Whitepaper",
         readTime: "10 min read",
-        title: "Explainable AI (XAI) Finans Sektöründe Neden Zorunlu?",
+        title: "Why Explainable AI (XAI) Is Essential in Finance",
         description:
-            "Kara kutu modellerinden şeffaf zekaya geçiş: regülatör beklentileri, denetim izleri ve NLP tabanlı karar özetleri.",
+            "From black-box models to transparent intelligence: regulatory expectations, audit trails, and NLP-based decision summaries.",
         color: "text-purple-400",
         bg: "bg-purple-500/10",
     },
     {
+        slug: "multi-bank-visibility",
         category: "Blog",
         readTime: "4 min read",
-        title: "Multi-Bank Visibility: Tek Ekranda Tüm Bankalar",
+        title: "Multi-Bank Visibility: All Banks on One Screen",
         description:
-            "Açık bankacılık API'leri ve Swift entegrasyonlarıyla çoklu banka konsolidasyonunun teknik altyapısını inceliyoruz.",
+            "Exploring the technical infrastructure of multi-bank consolidation through open banking APIs and Swift integrations.",
         color: "text-cyan-400",
         bg: "bg-cyan-500/10",
     },
 ];
 
 export default function ResourcesPage() {
-    const [activeCategory, setActiveCategory] = useState("Tümü");
+    const [activeCategory, setActiveCategory] = useState("All");
 
     const filteredArticles =
-        activeCategory === "Tümü"
+        activeCategory === "All"
             ? articles
             : articles.filter((a) => {
-                if (activeCategory === "Müşteri Hikayeleri") return a.category === "Müşteri Hikayesi";
-                if (activeCategory === "Ürün Güncellemeleri") return a.category === "Ürün Güncellemesi";
+                if (activeCategory === "Customer Stories") return a.category === "Customer Story";
+                if (activeCategory === "Product Updates") return a.category === "Product Update";
                 return a.category === activeCategory;
             });
 
@@ -86,11 +92,11 @@ export default function ResourcesPage() {
                             Knowledge &amp; Resources
                         </span>
                         <h1 className="mb-6 text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-                            Otonom Finansın Bilgi Merkezi.
+                            The Knowledge Hub for Autonomous Finance.
                         </h1>
                         <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-zinc-400">
-                            Yapay zeka destekli finansal dönüşüm, müşteri başarı hikayeleri
-                            ve XAI (Açıklanabilir Yapay Zeka) üzerine derinlemesine analizler.
+                            Deep dives into AI-powered financial transformation, customer
+                            success stories, and explainable AI (XAI) insights.
                         </p>
                     </Reveal>
                 </div>
@@ -106,8 +112,8 @@ export default function ResourcesPage() {
                                     key={cat}
                                     onClick={() => setActiveCategory(cat)}
                                     className={`rounded-lg px-5 py-2.5 text-sm font-semibold transition-all duration-200 ${activeCategory === cat
-                                            ? "bg-[#E5F33D] text-black shadow-[0_0_20px_rgba(229,243,61,0.15)]"
-                                            : "border border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-white"
+                                        ? "bg-[#E5F33D] text-black shadow-[0_0_20px_rgba(229,243,61,0.15)]"
+                                        : "border border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-white"
                                         }`}
                                 >
                                     {cat}
@@ -145,22 +151,22 @@ export default function ResourcesPage() {
                             {/* Right — Content */}
                             <div className="flex flex-col justify-center p-8 md:p-12">
                                 <span className="mb-4 inline-block w-fit rounded-md bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-400">
-                                    Müşteri Hikayesi
+                                    Customer Story
                                 </span>
                                 <h2 className="mb-4 text-2xl font-bold text-white md:text-3xl">
-                                    Global Lojistik Devi, Narsent ile DSO&apos;yu 45 Günden 30
-                                    Güne Nasıl Düşürdü?
+                                    How a Global Logistics Leader Cut DSO from 45 to 30 Days
+                                    with Narsent
                                 </h2>
                                 <p className="mb-8 max-w-lg text-sm leading-relaxed text-zinc-400">
-                                    Manuel mutabakat süreçlerini sıfıra indiren ve otonom erken
-                                    uyarı sistemiyle tahsilatları güvenceye alan X Lojistik&apos;in
-                                    dönüşüm hikayesi.
+                                    The transformation story of X Logistics — eliminating manual
+                                    reconciliation and securing collections with an autonomous
+                                    early warning system.
                                 </p>
                                 <Link
-                                    href="#"
+                                    href="/resources/retail-giant-x-case-study"
                                     className="inline-flex items-center gap-2 text-sm font-semibold text-[#E5F33D] transition-colors hover:text-white"
                                 >
-                                    Vaka Analizini Oku
+                                    Read Case Study
                                     <ArrowRight className="h-4 w-4" />
                                 </Link>
                             </div>
@@ -175,7 +181,7 @@ export default function ResourcesPage() {
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {filteredArticles.map((article, index) => (
                             <Reveal key={article.title} direction="up" delay={0.05 + index * 0.08}>
-                                <Link href="#" className="group block h-full">
+                                <Link href={`/resources/${article.slug}`} className="group block h-full">
                                     <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-[#11121A] transition-all duration-300 hover:-translate-y-1 hover:border-zinc-700 hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)]">
                                         {/* Visual placeholder */}
                                         <div className="relative flex h-40 items-center justify-center overflow-hidden bg-gradient-to-br from-[#11121A] to-[#0a0a0f]">
@@ -190,8 +196,8 @@ export default function ResourcesPage() {
                                             <div className={`relative z-10 flex h-12 w-12 items-center justify-center rounded-xl ${article.bg} ${article.color}`}>
                                                 {article.category === "Whitepaper" && <FileText className="h-6 w-6" />}
                                                 {article.category === "Blog" && <Newspaper className="h-6 w-6" />}
-                                                {article.category === "Ürün Güncellemesi" && <Rocket className="h-6 w-6" />}
-                                                {article.category === "Müşteri Hikayesi" && <BookOpen className="h-6 w-6" />}
+                                                {article.category === "Product Update" && <Rocket className="h-6 w-6" />}
+                                                {article.category === "Customer Story" && <BookOpen className="h-6 w-6" />}
                                             </div>
                                         </div>
 
@@ -239,21 +245,21 @@ export default function ResourcesPage() {
                             <div className="relative z-10 flex flex-col items-center gap-8 lg:flex-row lg:justify-between">
                                 <div className="text-center lg:text-left">
                                     <h2 className="mb-2 text-2xl font-bold text-white md:text-3xl">
-                                        Finansın Geleceği Gelen Kutunuzda.
+                                        The Future of Finance, In Your Inbox.
                                     </h2>
                                     <p className="text-sm text-zinc-400">
-                                        Otonom finans, XAI araştırmaları ve ürün güncellemeleri
-                                        hakkında aylık bülten.
+                                        Monthly newsletter on autonomous finance, XAI research,
+                                        and product updates.
                                     </p>
                                 </div>
                                 <div className="flex w-full max-w-md gap-3 lg:w-auto">
                                     <input
                                         type="email"
-                                        placeholder="cfo@sirket.com"
+                                        placeholder="cfo@company.com"
                                         className="h-12 flex-1 rounded-lg border border-zinc-700 bg-black/40 px-4 text-sm text-white placeholder-zinc-600 outline-none transition-colors focus:border-[#E5F33D]/50 focus:ring-1 focus:ring-[#E5F33D]/20"
                                     />
                                     <button className="h-12 shrink-0 rounded-lg bg-[#E5F33D] px-6 text-sm font-bold text-black transition-all duration-200 hover:scale-105 hover:shadow-[0_0_20px_rgba(229,243,61,0.2)]">
-                                        Abone Ol
+                                        Subscribe
                                     </button>
                                 </div>
                             </div>

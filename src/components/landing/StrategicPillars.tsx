@@ -54,16 +54,16 @@ export function StrategicPillars() {
 
                     {/* Headline */}
                     <h2 className="mb-6 max-w-3xl text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
-                        Üç Stratejik Sütun.{" "}
+                        Three Strategic Pillars.{" "}
                         <span className="bg-gradient-to-r from-zinc-300 to-zinc-500 bg-clip-text text-transparent">
-                            Tek Bir Otonom Akıl.
+                            One Autonomous Mind.
                         </span>
                     </h2>
 
                     {/* Subtext */}
                     <p className="mb-16 max-w-2xl text-lg text-zinc-400">
-                        Nakit akışınızı, alacaklarınızı ve karar alma süreçlerinizi tek bir
-                        çatı altında birleştiren yeni nesil finansal altyapı.
+                        Next-generation financial infrastructure that unifies your cashflow,
+                        receivables, and decision-making under a single autonomous roof.
                     </p>
                 </Reveal>
 

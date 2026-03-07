@@ -7,66 +7,62 @@ import { useState } from "react";
 
 const plans = [
     {
-        name: "Growth",
-        price: "$499",
-        period: "/mo",
+        name: "Advanced",
+        price: "$2,500",
+        period: "/ month",
+        subtext: "Billed annually",
         highlight: false,
         features: [
-            "3 Banka Entegrasyonu",
-            "Temel Nakit Akışı Tahmini",
-            "Standart E-posta Desteği",
+            "Multi-Bank Consolidation (Up to 20 accounts)",
+            "90-Day Liquidity Forecasting",
+            "Automated AP/AR Reconciliation via Nexus",
+            "Centralized Cashflow Dashboard",
         ],
-        cta: "Start Free Trial",
+        cta: "Request Demo",
+        ctaHref: "/request-demo",
         ctaStyle:
             "border border-zinc-700 bg-transparent text-zinc-300 hover:border-zinc-500 hover:bg-white/5 hover:text-white",
-    },
-    {
-        name: "Professional",
-        price: "$999",
-        period: "/mo",
-        highlight: true,
-        badge: "Most Popular",
-        features: [
-            "Horizon AI Tahminleri",
-            "Sınırsız Banka/ERP Entegrasyonu",
-            "Otonom Alacak Yönetimi",
-            "Öncelikli Destek",
-        ],
-        cta: "Get Started",
-        ctaStyle:
-            "bg-[#E5F33D] text-black font-bold hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(229,243,61,0.25)]",
     },
     {
         name: "Enterprise",
-        price: "Custom",
+        price: "Custom Pricing",
         period: "",
-        highlight: false,
+        subtext: "Tailored to transaction volume",
+        highlight: true,
         features: [
-            "Dedicated XAI Sunucusu",
-            "Özel Finansal Model Eğitimi",
-            "7/24 VIP Müşteri Temsilcisi",
+            "Unlimited Multi-Entity & Multi-Currency Consolidation",
+            "Horizon AI: Predictive Scenario & What-If Engine",
+            "Zero-Touch Ledger Clean-up (Unstructured Data Normalization)",
+            "Custom Machine Learning Models",
+            "Dedicated Tenant Architecture & 24/7 SLA",
         ],
         cta: "Contact Sales",
+        ctaHref: "/request-demo",
         ctaStyle:
-            "border border-zinc-700 bg-transparent text-zinc-300 hover:border-zinc-500 hover:bg-white/5 hover:text-white",
+            "bg-[#E5F33D] text-black font-bold hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(229,243,61,0.25)]",
     },
 ];
 
 const faqs = [
     {
-        question: "Verilerimiz yapay zeka eğitiminde kullanılıyor mu?",
+        question: "How does the platform handle multi-entity and multi-currency holding structures?",
         answer:
-            "Hayır, verileriniz ISO 27001 standartlarında tamamen izole tutulur. Finansal verileriniz asla açık yapay zeka modellerini eğitmek için kullanılmaz.",
+            "Narsent normalizes all global currencies in real-time. The system provides a consolidated group-level view of liquidity, while keeping individual subsidiary data securely isolated and accessible within their specific dashboards.",
     },
     {
-        question: "Mevcut ERP sistemimize entegre olabilir miyiz?",
+        question: "Our existing ERP data is completely unstructured and messy. Can Nexus handle this?",
         answer:
-            "Evet, SAP, Oracle ve NetSuite dahil 50+ sisteme tak-çalıştır bağlanıyoruz. Entegrasyon süreci ortalama 48 saat içinde tamamlanır.",
+            "Yes. Nexus is built with an autonomous data-cleansing engine. It automatically identifies, cleanses, and maps unstructured CSVs or legacy ERP feeds into the Narsent Standard before it even reaches the dashboard. No manual formatting required.",
     },
     {
-        question: "İstediğim zaman iptal edebilir miyim?",
+        question: "Can the variables in the Horizon AI forecasting models be adjusted?",
         answer:
-            "Evet, aylık planlarda hiçbir taahhüt bulunmaz. Dilediğiniz zaman hesabınızı iptal edebilirsiniz.",
+            "Absolutely. While Horizon AI provides baseline autonomous predictions, organizations can inject custom macroeconomic variables (like expected inflation spikes or FX volatility) to simulate aggressive or defensive scenarios accurately.",
+    },
+    {
+        question: "Is there a limit to the transaction volume the system can process?",
+        answer:
+            "The Enterprise tier runs on dedicated infrastructure designed for institutional volume, processing millions of ledger rows and real-time bank feeds without rate limits or performance degradation.",
     },
 ];
 
@@ -105,11 +101,10 @@ export default function PricingPage() {
                 <div className="container mx-auto max-w-4xl text-center">
                     <Reveal direction="up">
                         <h1 className="mb-6 text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-                            Her Ölçekteki Finans Ekibi İçin Otonom Güç.
+                            Engineered for Autonomous Finance. Built for Scale.
                         </h1>
                         <p className="mx-auto max-w-2xl text-lg text-zinc-400">
-                            Karmaşık lisanslama modelleri yok. Şeffaf fiyatlandırma ile sadece
-                            ihtiyacınız olan değere ödeme yapın.
+                            Align your financial tech stack with a pricing model built for complexity. Narsent delivers unified liquidity visibility, multi-entity consolidation, and predictive AI—all in one centralized platform.
                         </p>
                     </Reveal>
                 </div>
@@ -117,57 +112,58 @@ export default function PricingPage() {
 
             {/* Pricing Cards */}
             <section className="px-4 pb-16 md:pb-24">
-                <div className="container mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
+                <div className="container mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
                     {plans.map((plan, index) => (
                         <Reveal key={plan.name} direction="up" delay={0.1 + index * 0.15}>
                             <div
-                                className={`relative flex h-full flex-col rounded-2xl border p-8 backdrop-blur-xl transition-all duration-300 ${plan.highlight
-                                        ? "border-[#E5F33D]/50 bg-[#11121A] shadow-[0_0_40px_rgba(229,243,61,0.06)]"
-                                        : "border-zinc-800 bg-[#11121A]"
+                                className={`relative flex h-full flex-col rounded-2xl border p-8 md:p-10 backdrop-blur-xl transition-all duration-300 ${plan.highlight
+                                    ? "border-[#E5F33D]/50 bg-[#11121A] shadow-[0_0_40px_rgba(229,243,61,0.06)]"
+                                    : "border-zinc-800 bg-[#11121A]"
                                     }`}
                             >
-                                {/* Badge */}
-                                {plan.badge && (
-                                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                                        <span className="rounded-full bg-[#E5F33D] px-4 py-1 text-xs font-bold text-black">
-                                            {plan.badge}
-                                        </span>
-                                    </div>
+                                {/* Glow for Enterprise */}
+                                {plan.highlight && (
+                                    <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-[#E5F33D]/5 blur-[60px]" />
                                 )}
 
                                 {/* Plan Name */}
-                                <h3 className="mb-4 text-lg font-semibold text-zinc-300">
+                                <h3 className="mb-2 text-2xl font-bold text-white">
                                     {plan.name}
                                 </h3>
 
                                 {/* Price */}
-                                <div className="mb-8">
+                                <div className="mb-2 mt-4 flex items-baseline">
                                     <span className="text-5xl font-extrabold text-white">
                                         {plan.price}
                                     </span>
                                     {plan.period && (
-                                        <span className="ml-1 text-base text-zinc-500">
+                                        <span className="ml-2 text-base font-medium text-zinc-400">
                                             {plan.period}
                                         </span>
                                     )}
                                 </div>
+                                <div className="mb-8 text-sm font-medium text-zinc-500">
+                                    {plan.subtext}
+                                </div>
 
                                 {/* Features */}
-                                <ul className="mb-10 flex flex-1 flex-col gap-4">
-                                    {plan.features.map((feature) => (
-                                        <li key={feature} className="flex items-center gap-3">
-                                            <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#E5F33D]/15 text-[#E5F33D]">
-                                                <Check className="h-3 w-3" />
-                                            </div>
-                                            <span className="text-sm text-zinc-300">{feature}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+                                <div className="mb-10 flex flex-1 flex-col">
+                                    <ul className="flex flex-col gap-5">
+                                        {plan.features.map((feature) => (
+                                            <li key={feature} className="flex items-start gap-4">
+                                                <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#E5F33D]/15 text-[#E5F33D]">
+                                                    <Check className="h-3 w-3" />
+                                                </div>
+                                                <span className="text-sm font-medium leading-relaxed text-zinc-300">{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
 
                                 {/* CTA */}
                                 <Link
-                                    href="/request-demo"
-                                    className={`inline-flex h-12 w-full items-center justify-center rounded-lg text-sm font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#E5F33D] focus:ring-offset-2 focus:ring-offset-[#11121A] ${plan.ctaStyle}`}
+                                    href={plan.ctaHref}
+                                    className={`mt-auto inline-flex h-14 w-full items-center justify-center rounded-xl text-sm font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#E5F33D] focus:ring-offset-2 focus:ring-offset-[#11121A] ${plan.ctaStyle}`}
                                 >
                                     {plan.cta}
                                 </Link>
@@ -182,11 +178,11 @@ export default function PricingPage() {
                 <div className="container mx-auto max-w-3xl">
                     <Reveal direction="up">
                         <h2 className="mb-12 text-center text-3xl font-bold text-white md:text-4xl">
-                            Sıkça Sorulan Sorular
+                            Frequently Asked Questions
                         </h2>
                     </Reveal>
                     <Reveal direction="up" delay={0.2}>
-                        <div className="rounded-2xl border border-zinc-800 bg-[#11121A] px-8">
+                        <div className="rounded-2xl border border-zinc-800 bg-[#11121A] px-6 py-2 md:px-10 md:py-4">
                             {faqs.map((faq) => (
                                 <FaqItem
                                     key={faq.question}

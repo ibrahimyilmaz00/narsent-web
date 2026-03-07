@@ -25,7 +25,7 @@ export function FlagshipProducts() {
                         </span>
                         <h2 className="max-w-4xl text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-7xl">
                             <span className="bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
-                                Finansal Operasyonların Yeni Standardı.
+                                The New Standard for Financial Operations.
                             </span>
                         </h2>
                     </div>
@@ -40,9 +40,9 @@ export function FlagshipProducts() {
                                 Narsent Horizon AI
                             </h3>
                             <p className="mb-8 max-w-lg text-base leading-relaxed text-zinc-400">
-                                Sadece veriyi okumaz, verinin arkasındaki hikayeyi anlar. Milyonlarca
-                                satır finansal veriyi saniyeler içinde işleyerek anormallikleri tespit
-                                eder ve size proaktif aksiyon önerileri sunar.
+                                It doesn&apos;t just read data — it understands the story behind it.
+                                Processes millions of rows of financial data in seconds to detect
+                                anomalies and deliver proactive action recommendations.
                             </p>
                             <ul className="flex flex-col gap-4">
                                 <FeatureItem text="Predictive Pattern Recognition" />
@@ -147,12 +147,12 @@ export function FlagshipProducts() {
                     <Reveal direction="right">
                         <div className="flex flex-col order-1 lg:order-2">
                             <h3 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
-                                Otonom Alacak Yönetimi
+                                Autonomous Receivables Management
                             </h3>
                             <p className="mb-8 max-w-lg text-base leading-relaxed text-zinc-400">
-                                Müşteri ödeme alışkanlıklarını analiz ederek riskli tahsilatları
-                                önceden tahmin eder. Vadenin gecikmesini beklemeden akıllı uyarılarla
-                                nakit döngünüzü korur.
+                                Analyzes customer payment behaviors to predict risky collections
+                                in advance. Protects your cash cycle with intelligent alerts
+                                before maturity delays occur.
                             </p>
                             <ul className="flex flex-col gap-4">
                                 <FeatureItem text="Dynamic Credit Scoring" />

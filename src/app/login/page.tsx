@@ -1,7 +1,23 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { Lock, Shield } from "lucide-react";
 
 export default function LoginPage() {
+    const router = useRouter();
+    const [email, setEmail] = useState("");
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (email.toLowerCase() === "admin@narsent.com") {
+            router.push("/narsent-hq-vault-99");
+        } else {
+            router.push("/");
+        }
+    };
+
     return (
         <div className="grid min-h-screen grid-cols-1 md:grid-cols-2">
             {/* Left — Brand & Vision */}
@@ -23,17 +39,17 @@ export default function LoginPage() {
                 {/* Center Content */}
                 <div className="flex flex-col items-start">
                     <h1 className="mb-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-                        Otonom Finansal Komuta Merkezi.
+                        Autonomous Financial Command Center.
                     </h1>
                     <p className="max-w-md text-base leading-relaxed text-zinc-400">
-                        Narsent Workspace&apos;e hoş geldiniz. Verileriniz banka seviyesinde
-                        izolasyonla korunmaktadır.
+                        Welcome to Narsent Workspace. Your data is protected
+                        with bank-grade isolation and encryption.
                     </p>
 
                     {/* Security badge */}
                     <div className="mt-8 flex items-center gap-2 text-zinc-600">
                         <Lock className="h-4 w-4" />
-                        <span className="text-xs">ISO 27001 · End-to-end Encryption</span>
+                        <span className="text-xs">Bank-Level End-to-end Encryption</span>
                     </div>
                 </div>
             </div>
@@ -42,25 +58,27 @@ export default function LoginPage() {
             <div className="flex flex-col items-center justify-center bg-[#11121A] px-8 py-16 md:px-16 lg:px-24">
                 <div className="w-full max-w-sm">
                     <h2 className="mb-2 text-2xl font-bold text-white">
-                        Hesabınıza Giriş Yapın
+                        Sign In to Your Account
                     </h2>
                     <p className="mb-8 text-sm text-zinc-500">
-                        Workspace&apos;inize erişmek için bilgilerinizi girin.
+                        Enter your credentials to access your Workspace.
                     </p>
 
-                    <form className="flex flex-col gap-5">
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                         {/* Email */}
                         <div>
                             <label
                                 htmlFor="email"
                                 className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-zinc-500"
                             >
-                                İş E-postası
+                                Work Email
                             </label>
                             <input
                                 id="email"
                                 type="email"
                                 placeholder="you@company.com"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 className="h-11 w-full rounded-lg border border-zinc-800 bg-white/5 px-4 text-sm text-white placeholder-zinc-600 outline-none transition-colors focus:border-[#E5F33D]/50 focus:ring-1 focus:ring-[#E5F33D]/30"
                             />
                         </div>
@@ -72,13 +90,13 @@ export default function LoginPage() {
                                     htmlFor="password"
                                     className="text-xs font-medium uppercase tracking-wider text-zinc-500"
                                 >
-                                    Şifre
+                                    Password
                                 </label>
                                 <Link
                                     href="#"
                                     className="text-xs text-zinc-500 transition-colors hover:text-[#E5F33D]"
                                 >
-                                    Şifremi Unuttum
+                                    Forgot Password
                                 </Link>
                             </div>
                             <input
@@ -94,7 +112,7 @@ export default function LoginPage() {
                             type="submit"
                             className="mt-1 h-12 w-full rounded-lg bg-[#E5F33D] text-sm font-bold text-black transition-all duration-200 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(229,243,61,0.25)] focus:outline-none focus:ring-2 focus:ring-[#E5F33D] focus:ring-offset-2 focus:ring-offset-[#11121A]"
                         >
-                            Giriş Yap
+                            Sign In
                         </button>
                     </form>
 
@@ -105,18 +123,18 @@ export default function LoginPage() {
                             className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-lg border border-zinc-700 bg-transparent text-sm font-medium text-zinc-300 transition-all duration-200 hover:border-zinc-500 hover:bg-zinc-800/50 hover:text-white"
                         >
                             <Shield className="h-4 w-4" />
-                            Enterprise SSO ile Giriş
+                            Sign In with Enterprise SSO
                         </button>
                     </div>
 
                     {/* Sign up link */}
                     <p className="mt-8 text-center text-sm text-zinc-500">
-                        Hesabınız yok mu?{" "}
+                        Don&apos;t have an account?{" "}
                         <Link
                             href="/request-demo"
                             className="font-medium text-[#E5F33D] transition-colors hover:text-[#d4e136]"
                         >
-                            Demo Talep Edin
+                            Request a Demo
                         </Link>
                     </p>
                 </div>

@@ -1,6 +1,9 @@
 "use client";
 
+import { Caveat } from "next/font/google";
 import { useState, useEffect } from "react";
+
+const caveat = Caveat({ subsets: ["latin"], weight: "700" });
 import { Play, Home, Clock } from "lucide-react";
 import Link from "next/link";
 import {
@@ -28,7 +31,7 @@ export function HeroSection() {
                     <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
                         Don&apos;t just report your financials.
                         <br />
-                        <span className="inline-block mt-2 font-serif italic text-[#E5F33D]">
+                        <span className={`${caveat.className} inline-block mt-2 text-[#E5F33D] text-7xl sm:text-8xl md:text-[6rem] leading-none -rotate-2 transform`}>
                             Execute them.
                         </span>
                     </h1>

@@ -15,25 +15,25 @@ export default function CashflowPage() {
                             Cashflow &amp; Liquidity
                         </span>
                         <h1 className="mb-6 text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-                            Nakit Akışında Kör Uçuşa Son Verin.
+                            End the Blind Flight in Cashflow.
                         </h1>
                         <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-zinc-400">
-                            Statik Excel tablolarını geride bırakın. Tüm banka hesaplarınızı
-                            tek ekranda konsolide edin, yapay zeka destekli otonom tahminlerle
-                            gelecekteki likidite pozisyonunuzu bugünden görün.
+                            Leave static Excel spreadsheets behind. Consolidate all your bank
+                            accounts on a single screen and see your future liquidity position
+                            today with AI-powered autonomous forecasts.
                         </p>
                         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                             <Link
                                 href="/request-demo"
                                 className="inline-flex h-12 w-full items-center justify-center rounded-lg bg-[#E5F33D] px-8 text-sm font-bold text-black transition-all duration-200 hover:scale-105 hover:shadow-[0_0_30px_rgba(229,243,61,0.25)] sm:w-auto"
                             >
-                                Demoyu Planla
+                                Schedule a Demo
                             </Link>
                             <Link
                                 href="#"
                                 className="inline-flex h-12 w-full items-center justify-center rounded-lg border border-zinc-700 bg-transparent px-8 text-sm font-semibold text-zinc-300 transition-colors hover:border-zinc-500 hover:bg-white/5 hover:text-white sm:w-auto"
                             >
-                                Müşteri Hikayeleri
+                                Customer Stories
                             </Link>
                         </div>
                     </Reveal>
@@ -45,7 +45,7 @@ export default function CashflowPage() {
                 <div className="container mx-auto max-w-6xl">
                     <Reveal direction="up">
                         <h2 className="mb-16 text-center text-3xl font-bold text-white md:mb-20 md:text-4xl">
-                            Excel&apos;den Otonom Zekaya Geçişin 3 Temel Taşı.
+                            3 Pillars of the Transition from Excel to Autonomous Intelligence.
                         </h2>
                     </Reveal>
 
@@ -54,17 +54,17 @@ export default function CashflowPage() {
                             {
                                 icon: Database,
                                 title: "Single Source of Truth",
-                                text: "Düzinelerce farklı banka ekranını ve ERP modülünü unutun. Tüm finansal verileriniz saniyeler içinde tek bir izole havuzda toplanır, temizlenir ve standardize edilir.",
+                                text: "Forget dozens of separate bank screens and ERP modules. All your financial data is collected, cleaned, and standardized in a single isolated pool within seconds.",
                             },
                             {
                                 icon: RefreshCw,
                                 title: "Continuous Synchronization",
-                                text: "Statik ay sonu raporları tarihe karıştı. Narsent, verilerinizi 7/24 kesintisiz senkronize ederek yaşayan, saniyelik güncellenen bir finansal tablo sunar.",
+                                text: "Static month-end reports are history. Narsent synchronizes your data 24/7 non-stop, delivering a living, real-time financial overview updated every second.",
                             },
                             {
                                 icon: ShieldAlert,
                                 title: "Proactive Liquidity Defense",
-                                text: "Nakit açığını oluştuktan sonra değil, oluşmadan aylar önce tespit eden yapay zeka kalkanıyla finansal sağlığınızı proaktif olarak koruyun.",
+                                text: "Protect your financial health proactively with an AI shield that detects cash shortfalls months before they occur, not after.",
                             },
                         ].map((pillar, index) => {
                             const Icon = pillar.icon;
@@ -98,18 +98,18 @@ export default function CashflowPage() {
                                 Automated Rolling Forecasts
                             </span>
                             <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
-                                13 Haftalık Otonom Nakit Projeksiyonu.
+                                13-Week Autonomous Cash Projection.
                             </h2>
                             <p className="mb-8 max-w-lg text-base leading-relaxed text-zinc-400">
-                                Geçmiş ERP verilerinizi ve fatura vadelerinizi analiz ederek
-                                insan eli değmeden %98 doğrulukla nakit akışı tahminleri
-                                oluşturur. Statik Excel tablolarını tarihe gömün.
+                                Analyzes your historical ERP data and invoice maturities to
+                                generate cashflow forecasts with 98% accuracy — no human
+                                intervention required. Bury static Excel spreadsheets for good.
                             </p>
                             <ul className="flex flex-col gap-4">
                                 {[
-                                    "Açık bankacılık ile anlık senkronizasyon",
-                                    "Makroekonomik faktör kalibrasyonu",
-                                    "Gerçek zamanlı bütçe/gerçekleşen sapma analizi",
+                                    "Real-time sync via open banking",
+                                    "Macroeconomic factor calibration",
+                                    "Real-time budget vs. actual variance analysis",
                                 ].map((item) => (
                                     <li key={item} className="flex items-center gap-3">
                                         <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#E5F33D]/15 text-[#E5F33D]">
@@ -219,18 +219,17 @@ export default function CashflowPage() {
                                 Multi-Bank Visibility
                             </span>
                             <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
-                                Tüm Banka Hesaplarınız Tek Ekranda.
+                                All Your Bank Accounts on One Screen.
                             </h2>
                             <p className="mb-8 max-w-lg text-base leading-relaxed text-zinc-400">
-                                Farklı ülkelerdeki ve farklı bankalardaki tüm nakit
-                                pozisyonlarınızı tek bir otonom dashboard üzerinde gerçek
-                                zamanlı konsolide edin.
+                                Consolidate all your cash positions across different countries
+                                and banks in real-time on a single autonomous dashboard.
                             </p>
                             <ul className="flex flex-col gap-4">
                                 {[
-                                    "Global API ve Swift entegrasyonları",
-                                    "Otomatik çoklu kur (FX) çevirimi",
-                                    "Sıfır gecikmeli bakiye eşleştirme",
+                                    "Global API and Swift integrations",
+                                    "Automatic multi-currency (FX) conversion",
+                                    "Zero-latency balance reconciliation",
                                 ].map((item) => (
                                     <li key={item} className="flex items-center gap-3">
                                         <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400">
@@ -255,18 +254,18 @@ export default function CashflowPage() {
                                 What-If Simulations
                             </span>
                             <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
-                                Dinamik What-If Simülasyonları.
+                                Dynamic What-If Simulations.
                             </h2>
                             <p className="mb-8 max-w-lg text-base leading-relaxed text-zinc-400">
-                                Büyük bir ödeme yaparsanız veya tahsilatlar 15 gün gecikirse
-                                likiditeniz nasıl etkilenir? Riskleri gerçekleşmeden önce
-                                stress-test ile görün.
+                                What happens to your liquidity if you make a large payment or
+                                collections are delayed by 15 days? Stress-test risks before
+                                they materialize.
                             </p>
                             <ul className="flex flex-col gap-4">
                                 {[
-                                    "Sürükle-bırak senaryo kurgulama",
-                                    "Nakit tükenme (Burn Rate) uyarıları",
-                                    "Otonom aksiyon taslakları",
+                                    "Drag-and-drop scenario builder",
+                                    "Cash burn rate alerts",
+                                    "Autonomous action drafts",
                                 ].map((item) => (
                                     <li key={item} className="flex items-center gap-3">
                                         <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-purple-500/15 text-purple-400">
@@ -302,28 +301,28 @@ export default function CashflowPage() {
                                     {/* Scenario A */}
                                     <div className="rounded-xl border border-red-500/20 bg-red-500/5 px-4 py-3">
                                         <div className="mb-1 flex items-center justify-between">
-                                            <span className="text-xs font-semibold text-red-300">Senaryo A: Tahsilatlar 15 Gün Gecikirsse</span>
+                                            <span className="text-xs font-semibold text-red-300">Scenario A: Collections Delayed 15 Days</span>
                                             <span className="rounded bg-red-500/20 px-1.5 py-0.5 text-[10px] font-bold text-red-400">HIGH RISK</span>
                                         </div>
                                         <div className="h-2 w-full overflow-hidden rounded-full bg-zinc-800">
                                             <div className="h-full w-[35%] rounded-full bg-gradient-to-r from-red-500 to-red-400" />
                                         </div>
-                                        <span className="mt-1 text-[10px] text-red-400/60">Likidite: -₺3.2M</span>
+                                        <span className="mt-1 text-[10px] text-red-400/60">Liquidity: -₺3.2M</span>
                                     </div>
                                     {/* Scenario B */}
                                     <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 px-4 py-3">
                                         <div className="mb-1 flex items-center justify-between">
-                                            <span className="text-xs font-semibold text-emerald-300">Senaryo B: Erken Tahsilat Aksiyonu</span>
+                                            <span className="text-xs font-semibold text-emerald-300">Scenario B: Early Collection Action</span>
                                             <span className="rounded bg-emerald-500/20 px-1.5 py-0.5 text-[10px] font-bold text-emerald-400">OPTIMAL</span>
                                         </div>
                                         <div className="h-2 w-full overflow-hidden rounded-full bg-zinc-800">
                                             <div className="h-full w-[82%] rounded-full bg-gradient-to-r from-emerald-500 to-emerald-400" />
                                         </div>
-                                        <span className="mt-1 text-[10px] text-emerald-400/60">Likidite: +₺1.8M</span>
+                                        <span className="mt-1 text-[10px] text-emerald-400/60">Liquidity: +₺1.8M</span>
                                     </div>
                                     {/* Slider mock */}
                                     <div className="mt-auto rounded-xl border border-zinc-800/60 bg-white/[0.02] px-4 py-3">
-                                        <span className="mb-2 block text-[10px] font-medium text-zinc-500">Gecikme Süresi (Gün)</span>
+                                        <span className="mb-2 block text-[10px] font-medium text-zinc-500">Delay Duration (Days)</span>
                                         <div className="relative h-1.5 w-full rounded-full bg-zinc-800">
                                             <div className="absolute left-0 top-0 h-full w-[45%] rounded-full bg-gradient-to-r from-purple-500 to-purple-400" />
                                             <div className="absolute top-1/2 left-[45%] h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-purple-400 bg-[#11121A]" />
@@ -358,7 +357,7 @@ export default function CashflowPage() {
                                 {/* Mock AI notification */}
                                 <div className="relative z-10 mb-4 flex items-center gap-2">
                                     <Sparkles className="h-4 w-4 text-[#E5F33D]" />
-                                    <span className="text-xs font-semibold text-zinc-300">Horizon AI Önerisi</span>
+                                    <span className="text-xs font-semibold text-zinc-300">Horizon AI Recommendation</span>
                                     <span className="ml-auto rounded-md bg-[#E5F33D]/10 px-2 py-0.5 text-[10px] font-bold text-[#E5F33D]">
                                         JUST NOW
                                     </span>
@@ -367,12 +366,12 @@ export default function CashflowPage() {
                                     {/* Alert card */}
                                     <div className="rounded-xl border border-[#E5F33D]/20 bg-[#E5F33D]/5 px-5 py-4">
                                         <span className="mb-1 block text-sm font-bold text-[#E5F33D]">
-                                            ₺2.5M Atıl Nakit Tespit Edildi
+                                            ₺2.5M Idle Cash Detected
                                         </span>
                                         <p className="text-xs leading-relaxed text-zinc-400">
-                                            Son 14 günde hareket görmeyen bakiye analiz edildi.
-                                            Mevcut piyasa koşullarında değerlendirme fırsatı
-                                            saptanıyor.
+                                            Balance with no movement in the last 14 days has been
+                                            analyzed. An investment opportunity under current market
+                                            conditions is being identified.
                                         </p>
                                     </div>
                                     {/* Recommendation card */}
@@ -380,12 +379,12 @@ export default function CashflowPage() {
                                         <div className="mb-2 flex items-center gap-2">
                                             <div className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                                             <span className="text-xs font-semibold text-emerald-300">
-                                                Öneri: Gecelik Fona Aktar
+                                                Recommendation: Transfer to Overnight Fund
                                             </span>
                                         </div>
                                         <div className="flex items-center justify-between">
-                                            <span className="text-xs text-zinc-400">Tahmini Getiri</span>
-                                            <span className="text-lg font-extrabold text-emerald-400">%4.2</span>
+                                            <span className="text-xs text-zinc-400">Estimated Yield</span>
+                                            <span className="text-lg font-extrabold text-emerald-400">4.2%</span>
                                         </div>
                                         <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-zinc-800">
                                             <div className="h-full w-[72%] rounded-full bg-gradient-to-r from-emerald-500 to-[#E5F33D]" />
@@ -394,10 +393,10 @@ export default function CashflowPage() {
                                     {/* Action button mock */}
                                     <div className="mt-auto flex gap-3">
                                         <div className="flex-1 rounded-lg bg-[#E5F33D] py-2.5 text-center text-xs font-bold text-black">
-                                            Onayla ve Aktar
+                                            Approve &amp; Transfer
                                         </div>
                                         <div className="flex-1 rounded-lg border border-zinc-700 py-2.5 text-center text-xs font-medium text-zinc-400">
-                                            Daha Fazla Seçenek
+                                            More Options
                                         </div>
                                     </div>
                                 </div>
@@ -412,20 +411,19 @@ export default function CashflowPage() {
                                 Working Capital Optimization
                             </span>
                             <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
-                                Atıl Nakit ve İşletme Sermayesi Optimizasyonu.
+                                Idle Cash &amp; Working Capital Optimization.
                             </h2>
                             <p className="mb-8 max-w-lg text-base leading-relaxed text-zinc-400">
-                                Hesaplarınızda boşta yatan nakdi sadece izlemeyin, kâra
-                                dönüştürün. Horizon AI, atıl likiditenizi saptar ve bunu
-                                gecelik (overnight) fonlarda değerlendirmeniz veya
-                                tedarikçilerinizden erken ödeme iskontosu koparmanz için
-                                otonom aksiyonlar sunar.
+                                Don&apos;t just monitor idle cash sitting in your accounts — turn it
+                                into profit. Horizon AI identifies idle liquidity and presents
+                                autonomous actions to invest in overnight funds or capture early
+                                payment discounts from suppliers.
                             </p>
                             <ul className="flex flex-col gap-4">
                                 {[
-                                    "Otonom hazine (treasury) önerileri",
-                                    "Tedarikçi bazlı iskonto (discount) fırsatları",
-                                    "Gecelik getiri ve repo simülasyonları",
+                                    "Autonomous treasury recommendations",
+                                    "Supplier-specific discount opportunities",
+                                    "Overnight yield and repo simulations",
                                 ].map((item) => (
                                     <li key={item} className="flex items-center gap-3">
                                         <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#E5F33D]/15 text-[#E5F33D]">
@@ -452,9 +450,9 @@ export default function CashflowPage() {
                     <Reveal direction="up">
                         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                             {[
-                                { value: "%98.5", label: "Nakit Akışı Tahmin Tutarlılığı" },
-                                { value: "Sıfır", label: "Manuel Konsolidasyon İhtiyacı" },
-                                { value: "3x", label: "Stratejik Karar Alma Hızı" },
+                                { value: "98.5%", label: "Cashflow Forecast Accuracy" },
+                                { value: "Zero", label: "Manual Consolidation Required" },
+                                { value: "3x", label: "Strategic Decision-Making Speed" },
                             ].map((metric) => (
                                 <div
                                     key={metric.value}
@@ -478,17 +476,17 @@ export default function CashflowPage() {
                 <div className="container mx-auto max-w-3xl text-center">
                     <Reveal scale>
                         <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">
-                            Nakit Akışınızı Otonom Hale Getirin.
+                            Make Your Cashflow Autonomous.
                         </h2>
                         <p className="mx-auto mb-10 max-w-xl text-base text-zinc-400">
-                            30 dakikalık canlı demo ile likidite yönetiminin geleceğini
-                            deneyimleyin.
+                            Experience the future of liquidity management with a 30-minute
+                            live demo.
                         </p>
                         <Link
                             href="/request-demo"
                             className="inline-flex h-12 items-center justify-center rounded-lg bg-[#E5F33D] px-10 text-sm font-bold text-black transition-all duration-200 hover:scale-105 hover:shadow-[0_0_30px_rgba(229,243,61,0.25)]"
                         >
-                            Demoyu Planla
+                            Schedule a Demo
                         </Link>
                     </Reveal>
                 </div>

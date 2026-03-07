@@ -18,11 +18,11 @@ export function TrustAndGovernance() {
                         Trust &amp; Governance
                     </span>
                     <h2 className="mb-6 max-w-3xl text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl">
-                        Kara Kutu Değil. Şeffaf Zekâ.
+                        Not a Black Box. Transparent Intelligence.
                     </h2>
                     <p className="max-w-2xl text-lg text-zinc-400">
-                        Narsent, aldığı her kararın arkasındaki matematiksel dayanağı açıklar
-                        ve finansal verilerinizi banka seviyesinde şifrelemeyle korur.
+                        Narsent explains the mathematical rationale behind every decision
+                        and protects your financial data with bank-grade encryption.
                     </p>
                 </div>
 
@@ -41,10 +41,10 @@ export function TrustAndGovernance() {
                                 Explainable AI (XAI) Framework
                             </h3>
                             <p className="text-base leading-relaxed text-zinc-400">
-                                Yapay zekanın nasıl düşündüğünü görün. Narsent, tespit ettiği her
-                                anormalliğin ve sunduğu her tahminin kök nedenini (Root-Cause
-                                Analysis) adım adım raporlar. Denetlenebilir ve şeffaf bir karar
-                                ağacı sunar.
+                                See how the AI thinks. Narsent reports the root cause
+                                (Root-Cause Analysis) of every anomaly it detects and every
+                                prediction it delivers, step by step. It presents an auditable
+                                and transparent decision tree.
                             </p>
                         </div>
                     </div>
@@ -59,13 +59,12 @@ export function TrustAndGovernance() {
                                 <ShieldCheck className="h-8 w-8" />
                             </div>
                             <h3 className="mb-4 text-2xl font-bold text-white">
-                                Banka Seviyesinde İzolasyon
+                                Bank-Grade Isolation
                             </h3>
                             <p className="text-base leading-relaxed text-zinc-400">
-                                Verileriniz sizin mahreminizdir. ISO 27001 standartlarında uçtan
-                                uca şifreleme ile korunur. Sizin finansal verileriniz, asla açık
-                                yapay zeka modellerini (LLM) eğitmek için kullanılmaz. Tamamen
-                                izole ve güvenli.
+                                Your data is your privacy. Protected with AES-256 end-to-end encryption
+                                and zero-trust architecture. Your financial data is never used to
+                                train open AI models (LLMs). Fully isolated and secure.
                             </p>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Search, BrainCircuit, Scale, FileSearch, Eye, ShieldCheck, Lock, GitBranch, Layers, UserCog } from "lucide-react";
+import { Check, BrainCircuit, Scale, FileSearch, Eye, ShieldCheck, Lock, GitBranch, Layers, UserCog } from "lucide-react";
 import Link from "next/link";
 import { Reveal } from "@/src/components/ui/reveal";
 
@@ -15,25 +15,25 @@ export default function TrustPage() {
                             Decision Intelligence &amp; Trust
                         </span>
                         <h1 className="mb-6 text-3xl font-extrabold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-                            Kara Kutu Değil, Şeffaf Zeka.
+                            Not a Black Box — Transparent Intelligence.
                         </h1>
                         <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-zinc-400">
-                            Narsent, aldığı her kararın arkasındaki matematiksel dayanağı ve
-                            veri izini (audit trail) saniyeler içinde raporlar. Yapay zekaya
-                            güvenin, otonom kararların izlenebilirliğinden emin olun.
+                            Narsent reports the mathematical rationale and data trail (audit
+                            trail) behind every decision within seconds. Trust the AI, and
+                            be confident in the traceability of autonomous decisions.
                         </p>
                         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                             <Link
                                 href="/request-demo"
                                 className="inline-flex h-12 w-full items-center justify-center rounded-lg bg-amber-400 px-8 text-sm font-bold text-black transition-all duration-200 hover:scale-105 hover:shadow-[0_0_30px_rgba(251,191,36,0.25)] sm:w-auto"
                             >
-                                Demoyu Planla
+                                Schedule a Demo
                             </Link>
                             <Link
                                 href="#traceability"
                                 className="inline-flex h-12 w-full items-center justify-center rounded-lg border border-zinc-700 bg-transparent px-8 text-sm font-semibold text-zinc-300 transition-colors hover:border-zinc-500 hover:bg-white/5 hover:text-white sm:w-auto"
                             >
-                                Özellikleri İncele
+                                Explore Features
                             </Link>
                         </div>
                     </Reveal>
@@ -45,7 +45,7 @@ export default function TrustPage() {
                 <div className="container mx-auto max-w-6xl">
                     <Reveal direction="up">
                         <h2 className="mb-16 text-center text-3xl font-bold text-white md:mb-20 md:text-4xl">
-                            Otonom Zekaya Güvenin 3 Temel Taşı.
+                            3 Pillars of Trust in Autonomous Intelligence.
                         </h2>
                     </Reveal>
 
@@ -53,18 +53,18 @@ export default function TrustPage() {
                         {[
                             {
                                 icon: Eye,
-                                title: "Sıfır Kara Kutu",
-                                text: "Yapay zekanın aldığı her karar, insan dilinde ve şeffaf bir nedensellikle sunulur.",
+                                title: "Zero Black Box",
+                                text: "Every decision made by the AI is presented with transparent causality in human language.",
                             },
                             {
                                 icon: FileSearch,
-                                title: "Kesintisiz Denetim İzi",
-                                text: "Her tahminin arkasındaki ERP ve banka verisine milisaniyeler içinde inin.",
+                                title: "Continuous Audit Trail",
+                                text: "Drill down to the ERP and bank data behind every prediction within milliseconds.",
                             },
                             {
                                 icon: Lock,
-                                title: "Banka Seviyesinde İzolasyon",
-                                text: "Verileriniz hiçbir global LLM modelini eğitmek için kullanılmaz, size özel kalır.",
+                                title: "Bank-Grade Isolation",
+                                text: "Your data is never used to train any global LLM model — it stays exclusively yours.",
                             },
                         ].map((pillar, index) => {
                             const Icon = pillar.icon;
@@ -91,26 +91,25 @@ export default function TrustPage() {
             {/* ═══ ZIGZAG #1: Decision Traceability ═══ */}
             <section id="traceability" className="scroll-mt-32 px-4 py-16 md:py-32">
                 <div className="container mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
-                    {/* Left — Text */}
                     <Reveal direction="left">
                         <div className="flex flex-col">
                             <span className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-amber-400">
                                 Traceability
                             </span>
                             <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
-                                Decision Traceability (Karar İzlenebilirliği).
+                                Decision Traceability.
                             </h2>
                             <p className="mb-8 max-w-lg text-base leading-relaxed text-zinc-400">
-                                Bir otonom tahmin veya aksiyon önerildiğinde, sistemin bunu
-                                &quot;Neden&quot; önerdiğini tek tıkla görün. Hangi ERP
-                                faturasından, hangi makroekonomik veriden yola çıkıldığını adım
-                                adım geriye doğru izleyin.
+                                When an autonomous prediction or action is recommended, see
+                                &quot;Why&quot; the system recommended it with a single click.
+                                Trace back step-by-step which ERP invoice and which
+                                macroeconomic data point was the starting point.
                             </p>
                             <ul className="flex flex-col gap-4">
                                 {[
-                                    "Uçtan uca veri kaynağı takibi",
-                                    "Matematiksel dayanak raporlaması",
-                                    "Görselleştirilmiş karar ağacı",
+                                    "End-to-end data source tracking",
+                                    "Mathematical rationale reporting",
+                                    "Visualized decision tree",
                                 ].map((item) => (
                                     <li key={item} className="flex items-center gap-3">
                                         <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-400/15 text-amber-400">
@@ -123,7 +122,6 @@ export default function TrustPage() {
                         </div>
                     </Reveal>
 
-                    {/* Right — Visual */}
                     <Reveal direction="right">
                         <div className="relative flex items-center justify-center">
                             <div className="pointer-events-none absolute h-80 w-80 rounded-full bg-amber-400/5 blur-[100px]" />
@@ -141,26 +139,25 @@ export default function TrustPage() {
                                     <span className="text-xs font-semibold text-zinc-300">Decision Tree Trace</span>
                                 </div>
                                 <div className="relative z-10 flex flex-1 flex-col gap-2.5">
-                                    {/* Root */}
                                     <div className="rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-2.5">
-                                        <span className="text-xs font-bold text-amber-300">Karar: ₺1.2M Nakit Açığı Uyarısı</span>
+                                        <span className="text-xs font-bold text-amber-300">Decision: ₺1.2M Cash Gap Alert</span>
                                     </div>
                                     <div className="ml-4 border-l border-zinc-800 pl-4">
                                         <div className="mb-2 rounded-lg border border-zinc-800/60 bg-white/[0.02] px-3 py-2">
-                                            <span className="text-[10px] text-zinc-500">Kaynak 1</span>
-                                            <p className="text-xs text-zinc-300">ERP: FTR-2024-3841 vadesi 15 gün geçmiş</p>
+                                            <span className="text-[10px] text-zinc-500">Source 1</span>
+                                            <p className="text-xs text-zinc-300">ERP: INV-2024-3841 overdue by 15 days</p>
                                         </div>
                                         <div className="mb-2 rounded-lg border border-zinc-800/60 bg-white/[0.02] px-3 py-2">
-                                            <span className="text-[10px] text-zinc-500">Kaynak 2</span>
-                                            <p className="text-xs text-zinc-300">Banka API: Garanti BBVA bakiye düşüşü -₺800K</p>
+                                            <span className="text-[10px] text-zinc-500">Source 2</span>
+                                            <p className="text-xs text-zinc-300">Bank API: Garanti BBVA balance drop -₺800K</p>
                                         </div>
                                         <div className="mb-2 rounded-lg border border-zinc-800/60 bg-white/[0.02] px-3 py-2">
-                                            <span className="text-[10px] text-zinc-500">Kaynak 3</span>
-                                            <p className="text-xs text-zinc-300">Makro: TCMB faiz kararı → maliyet artışı</p>
+                                            <span className="text-[10px] text-zinc-500">Source 3</span>
+                                            <p className="text-xs text-zinc-300">Macro: CBRT rate decision → cost increase</p>
                                         </div>
                                     </div>
                                     <div className="mt-auto rounded-lg border border-amber-500/20 bg-amber-500/5 px-4 py-2">
-                                        <span className="text-[10px] font-bold text-amber-400">Güven Skoru: %97.2 · 3 bağımsız kaynak doğrulandı</span>
+                                        <span className="text-[10px] font-bold text-amber-400">Confidence Score: 97.2% · 3 independent sources verified</span>
                                     </div>
                                 </div>
                             </div>
@@ -172,7 +169,6 @@ export default function TrustPage() {
             {/* ═══ ZIGZAG #2: Explainable AI (Reversed) ═══ */}
             <section id="xai" className="scroll-mt-32 bg-[#0a0a0f] px-4 py-16 md:py-32">
                 <div className="container mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
-                    {/* Left — Visual */}
                     <Reveal direction="left">
                         <div className="relative flex items-center justify-center">
                             <div className="pointer-events-none absolute h-80 w-80 rounded-full bg-purple-500/5 blur-[100px]" />
@@ -190,57 +186,52 @@ export default function TrustPage() {
                                     <span className="text-xs font-semibold text-zinc-300">XAI Reasoning Output</span>
                                 </div>
                                 <div className="relative z-10 flex flex-1 flex-col gap-3">
-                                    {/* Model output */}
                                     <div className="rounded-xl border border-zinc-800/60 bg-white/[0.02] px-4 py-3">
-                                        <span className="mb-1 block text-[10px] font-bold text-zinc-500">MODEL ÇIKTISI</span>
+                                        <span className="mb-1 block text-[10px] font-bold text-zinc-500">MODEL OUTPUT</span>
                                         <p className="font-mono text-[10px] leading-relaxed text-zinc-600">
                                             pred_cashgap=1.2M, conf=0.972, feat_imp=[inv_overdue:0.41, bank_bal:0.33, macro:0.26]
                                         </p>
                                     </div>
-                                    {/* Arrow */}
                                     <div className="flex items-center justify-center">
                                         <div className="flex h-8 w-8 items-center justify-center rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-400">
                                             <span className="text-sm">↓</span>
                                         </div>
                                     </div>
-                                    {/* Human readable */}
                                     <div className="rounded-xl border border-purple-500/20 bg-purple-500/5 px-4 py-3">
-                                        <span className="mb-1 block text-[10px] font-bold text-purple-400">İNSAN DİLİ ÇEVİRİSİ</span>
+                                        <span className="mb-1 block text-[10px] font-bold text-purple-400">HUMAN-READABLE TRANSLATION</span>
                                         <p className="text-xs leading-relaxed text-zinc-300">
-                                            &quot;Önümüzdeki 2 hafta içinde ₺1.2M nakit açığı bekleniyor.
-                                            En büyük etken (%41) vadesi geçmiş faturalar. Banka bakiyesi
-                                            düşüşü (%33) ve TCMB faiz kararı (%26) riski artırıyor.&quot;
+                                            &quot;A ₺1.2M cash gap is expected within the next 2 weeks.
+                                            The biggest factor (41%) is overdue invoices. Bank balance
+                                            decline (33%) and CBRT rate decision (26%) amplify the risk.&quot;
                                         </p>
                                     </div>
                                     <div className="mt-auto flex items-center gap-2 rounded-lg border border-zinc-800/40 bg-white/[0.01] px-3 py-2">
                                         <Layers className="h-3 w-3 text-purple-400" />
-                                        <span className="text-[10px] text-zinc-500">3 parametre ağırlığı şeffaf olarak raporlandı</span>
+                                        <span className="text-[10px] text-zinc-500">3 parameter weights transparently reported</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </Reveal>
 
-                    {/* Right — Text */}
                     <Reveal direction="right">
                         <div className="flex flex-col">
                             <span className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-purple-400">
                                 Explainable AI
                             </span>
                             <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
-                                Explainable AI (Açıklanabilir Yapay Zeka).
+                                Explainable AI (XAI).
                             </h2>
                             <p className="mb-8 max-w-lg text-base leading-relaxed text-zinc-400">
-                                Karmaşık derin öğrenme modellerini ve Narsent Horizon
-                                AI&apos;ın akıl yürütme (reasoning) sürecini, finans
-                                ekibinizin okuyabileceği sade, insan diline (NLP)
-                                dönüştürüyoruz.
+                                We translate complex deep learning models and Narsent Horizon
+                                AI&apos;s reasoning process into plain, human-readable language
+                                (NLP) that your finance team can understand.
                             </p>
                             <ul className="flex flex-col gap-4">
                                 {[
-                                    "NLP tabanlı karar özetleri",
-                                    "Parametre ağırlıklarının şeffaflığı",
-                                    "Kullanıcı dostu denetim paneli",
+                                    "NLP-based decision summaries",
+                                    "Transparent parameter weights",
+                                    "User-friendly audit panel",
                                 ].map((item) => (
                                     <li key={item} className="flex items-center gap-3">
                                         <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-purple-500/15 text-purple-400">
@@ -258,26 +249,25 @@ export default function TrustPage() {
             {/* ═══ ZIGZAG #3: Root-Cause Analysis ═══ */}
             <section id="root-cause" className="scroll-mt-32 px-4 py-16 md:py-32">
                 <div className="container mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
-                    {/* Left — Text */}
                     <Reveal direction="left">
                         <div className="flex flex-col">
                             <span className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-red-400">
                                 Root-Cause Analysis
                             </span>
                             <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
-                                Otonom Root-Cause Analysis (Kök Neden Analizi).
+                                Autonomous Root-Cause Analysis.
                             </h2>
                             <p className="mb-8 max-w-lg text-base leading-relaxed text-zinc-400">
-                                Nakit akışınızda bir sapma veya anormallik olduğunda yüzlerce
-                                Excel sekmesinde hata aramayı bırakın. Sistem saniyeler içinde
-                                hatanın kök nedenini (Örn: Tedarikçi X&apos;in gecikmesi) bulur
-                                ve raporlar.
+                                When there&apos;s a deviation or anomaly in your cashflow, stop
+                                searching for errors across hundreds of Excel tabs. The system
+                                finds the root cause (e.g., Supplier X&apos;s delay) within seconds
+                                and reports it.
                             </p>
                             <ul className="flex flex-col gap-4">
                                 {[
-                                    "Saniyelik anomali tespiti",
-                                    "Çapraz tablo veri doğrulama",
-                                    "Otonom düzeltme önerileri",
+                                    "Sub-second anomaly detection",
+                                    "Cross-table data validation",
+                                    "Autonomous correction recommendations",
                                 ].map((item) => (
                                     <li key={item} className="flex items-center gap-3">
                                         <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-500/15 text-red-400">
@@ -290,7 +280,6 @@ export default function TrustPage() {
                         </div>
                     </Reveal>
 
-                    {/* Right — Visual */}
                     <Reveal direction="right">
                         <div className="relative flex items-center justify-center">
                             <div className="pointer-events-none absolute h-80 w-80 rounded-full bg-red-500/5 blur-[100px]" />
@@ -307,37 +296,34 @@ export default function TrustPage() {
                                     <Scale className="h-4 w-4 text-red-400" />
                                     <span className="text-xs font-semibold text-zinc-300">Root-Cause Engine</span>
                                     <span className="ml-auto rounded-md bg-red-500/10 px-2 py-0.5 text-[10px] font-bold text-red-400">
-                                        0.8 SN
+                                        0.8 SEC
                                     </span>
                                 </div>
                                 <div className="relative z-10 flex flex-1 flex-col gap-3">
-                                    {/* Anomaly */}
                                     <div className="rounded-xl border border-red-500/20 bg-red-500/5 px-4 py-3">
-                                        <span className="text-xs font-bold text-red-300">Anomali: ₺340K Nakit Çıkışı Sapması</span>
-                                        <p className="mt-1 text-[10px] text-zinc-500">Beklenen: ₺1.8M · Gerçekleşen: ₺2.14M</p>
+                                        <span className="text-xs font-bold text-red-300">Anomaly: ₺340K Cash Outflow Deviation</span>
+                                        <p className="mt-1 text-[10px] text-zinc-500">Expected: ₺1.8M · Actual: ₺2.14M</p>
                                     </div>
-                                    {/* Analysis steps */}
                                     <div className="flex flex-col gap-1.5 pl-3 border-l border-zinc-800">
                                         <div className="rounded-lg bg-white/[0.02] px-3 py-1.5">
-                                            <span className="text-[10px] text-zinc-500">1. ERP kontrolü →</span>
-                                            <span className="ml-1 text-[10px] text-zinc-400">3 beklenmeyen ödeme emri</span>
+                                            <span className="text-[10px] text-zinc-500">1. ERP check →</span>
+                                            <span className="ml-1 text-[10px] text-zinc-400">3 unexpected payment orders</span>
                                         </div>
                                         <div className="rounded-lg bg-white/[0.02] px-3 py-1.5">
-                                            <span className="text-[10px] text-zinc-500">2. Tedarikçi analizi →</span>
-                                            <span className="ml-1 text-[10px] text-zinc-400">Tedarikçi X erken fatura kesmiş</span>
+                                            <span className="text-[10px] text-zinc-500">2. Supplier analysis →</span>
+                                            <span className="ml-1 text-[10px] text-zinc-400">Supplier X issued early invoice</span>
                                         </div>
                                         <div className="rounded-lg bg-white/[0.02] px-3 py-1.5">
-                                            <span className="text-[10px] text-zinc-500">3. Çapraz doğrulama →</span>
-                                            <span className="ml-1 text-[10px] text-zinc-400">Kontrat koşulları ihlal edilmiş</span>
+                                            <span className="text-[10px] text-zinc-500">3. Cross-validation →</span>
+                                            <span className="ml-1 text-[10px] text-zinc-400">Contract terms violated</span>
                                         </div>
                                     </div>
-                                    {/* Result */}
                                     <div className="mt-auto rounded-xl border border-emerald-500/20 bg-emerald-500/5 px-4 py-2.5">
                                         <span className="text-xs font-bold text-emerald-300">
-                                            Kök Neden: Tedarikçi X — Erken faturalama (₺340K)
+                                            Root Cause: Supplier X — Early invoicing (₺340K)
                                         </span>
                                         <p className="mt-0.5 text-[10px] text-emerald-400/60">
-                                            Öneri: Ödeme iade taslağı hazırlandı
+                                            Recommendation: Payment refund draft prepared
                                         </p>
                                     </div>
                                 </div>
@@ -350,7 +336,6 @@ export default function TrustPage() {
             {/* ═══ ZIGZAG #4: Audit & Compliance (Reversed) ═══ */}
             <section id="audit-compliance" className="scroll-mt-32 bg-[#0a0a0f] px-4 py-16 md:py-32">
                 <div className="container mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
-                    {/* Left — Visual */}
                     <Reveal direction="left">
                         <div className="relative flex items-center justify-center">
                             <div className="pointer-events-none absolute h-80 w-80 rounded-full bg-emerald-500/5 blur-[100px]" />
@@ -371,8 +356,8 @@ export default function TrustPage() {
                                     {[
                                         { label: "Tenant Isolation", status: "ACTIVE", icon: "🔒" },
                                         { label: "AES-256 Encryption", status: "ACTIVE", icon: "🛡️" },
-                                        { label: "SOC 2 Type II", status: "CERTIFIED", icon: "✓" },
-                                        { label: "ISO 27001", status: "CERTIFIED", icon: "✓" },
+                                        { label: "Zero-Trust Framework", status: "ACTIVE", icon: "🔒" },
+                                        { label: "E2E Encryption", status: "ACTIVE", icon: "🛡️" },
                                     ].map((item) => (
                                         <div
                                             key={item.label}
@@ -389,10 +374,10 @@ export default function TrustPage() {
                                     ))}
                                     <div className="mt-auto flex gap-3">
                                         <div className="flex-1 rounded-lg bg-amber-400 py-2.5 text-center text-xs font-bold text-black">
-                                            Denetim Raporu İndir
+                                            Download Audit Report
                                         </div>
                                         <div className="flex-1 rounded-lg border border-zinc-700 py-2.5 text-center text-xs font-medium text-zinc-400">
-                                            RBAC Ayarları
+                                            RBAC Settings
                                         </div>
                                     </div>
                                 </div>
@@ -400,26 +385,25 @@ export default function TrustPage() {
                         </div>
                     </Reveal>
 
-                    {/* Right — Text */}
                     <Reveal direction="right">
                         <div className="flex flex-col">
                             <span className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-emerald-400">
-                                Audit & Compliance
+                                Audit &amp; Compliance
                             </span>
                             <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
                                 Continuous Audit &amp; Compliance.
                             </h2>
                             <p className="mb-8 max-w-lg text-base leading-relaxed text-zinc-400">
-                                Finansal verileriniz ve otonom kararlarınız, ISO 27001 ve SOC 2
-                                Type II standartlarındaki izole ağ geçidimizde (Nexus)
-                                şifrelenir. Denetim ekipleri (Big 4) için tek tıkla hazır
-                                raporlar.
+                                Your financial data and autonomous decisions are encrypted in
+                                our isolated gateway (Nexus) with AES-256 end-to-end encryption
+                                and zero-trust architecture. One-click audit-ready reports for Big 4
+                                teams.
                             </p>
                             <ul className="flex flex-col gap-4">
                                 {[
-                                    "Tenant Isolation (Müşteri Veri İzolasyonu)",
-                                    "AES-256 Şifreleme",
-                                    "Rol bazlı yetkilendirme (RBAC)",
+                                    "Tenant isolation (customer data isolation)",
+                                    "AES-256 encryption",
+                                    "Role-based access control (RBAC)",
                                 ].map((item) => (
                                     <li key={item} className="flex items-center gap-3">
                                         <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-400">
@@ -446,9 +430,9 @@ export default function TrustPage() {
                     <Reveal direction="up">
                         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                             {[
-                                { value: "%100", label: "Karar İzlenebilirliği (Audit Trail)" },
-                                { value: "< 1 Sn", label: "Kök Neden (Root-Cause) Tespit Hızı" },
-                                { value: "SOC 2 & ISO", label: "Global Güvenlik Standartları" },
+                                { value: "100%", label: "Decision Traceability (Audit Trail)" },
+                                { value: "< 1 Sec", label: "Root-Cause Detection Speed" },
+                                { value: "Zero-Trust", label: "Enterprise Security Architecture" },
                             ].map((metric) => (
                                 <div
                                     key={metric.value}
@@ -472,17 +456,17 @@ export default function TrustPage() {
                 <div className="container mx-auto max-w-3xl text-center">
                     <Reveal scale>
                         <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">
-                            Otonom Kararlara Güvenin, Şeffaflıkla.
+                            Trust Autonomous Decisions, with Transparency.
                         </h2>
                         <p className="mx-auto mb-10 max-w-xl text-base text-zinc-400">
-                            30 dakikalık canlı demo ile şeffaf yapay zeka altyapısını
-                            deneyimleyin.
+                            Experience the transparent AI infrastructure with a 30-minute
+                            live demo.
                         </p>
                         <Link
                             href="/request-demo"
                             className="inline-flex h-12 items-center justify-center rounded-lg bg-amber-400 px-10 text-sm font-bold text-black transition-all duration-200 hover:scale-105 hover:shadow-[0_0_30px_rgba(251,191,36,0.25)]"
                         >
-                            Demoyu Planla
+                            Schedule a Demo
                         </Link>
                     </Reveal>
                 </div>
