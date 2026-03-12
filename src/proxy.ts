@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function middleware(request: NextRequest) {
+export default function middleware(request: NextRequest) {
     const sessionCookie = request.cookies.get('narsent_session');
     const isAuthPath = request.nextUrl.pathname === '/narsent-hq-vault-99/login';
 
