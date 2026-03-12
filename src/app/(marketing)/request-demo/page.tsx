@@ -4,6 +4,7 @@ import { Check, ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/src/components/ui/reveal";
 import { useState } from "react";
 import Image from "next/image";
+import { createLead } from "@/src/app/actions/lead";
 
 const expectations = [
     "Live ERP and banking integration simulation",
@@ -34,10 +35,21 @@ export default function RequestDemoPage() {
     const [erp, setErp] = useState("");
     const [submitted, setSubmitted] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        console.log({ email, company, title, erp });
-        setSubmitted(true);
+        try {
+            await createLead({
+                name: company,
+                email,
+                company,
+                title,
+                erp
+            });
+            setSubmitted(true);
+        } catch (error) {
+            console.error("Failed to submit demo request:", error);
+            alert("An error occurred. Please try again.");
+        }
     };
 
     return (

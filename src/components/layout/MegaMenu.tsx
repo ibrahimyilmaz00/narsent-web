@@ -1,7 +1,9 @@
 "use client";
 
 import * as React from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { getBlogs } from "@/src/app/actions/blog";
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -41,6 +43,22 @@ const ListItem = React.forwardRef<
 ListItem.displayName = "ListItem";
 
 export function MegaMenu() {
+    const [featuredReport, setFeaturedReport] = useState<any | null>(null);
+
+    useEffect(() => {
+        const fetchLatestReport = async () => {
+            try {
+                const data = await getBlogs(false);
+                if (data.length > 0) {
+                    setFeaturedReport(data[0]);
+                }
+            } catch (error) {
+                console.error("Failed to fetch latest report for MegaMenu", error);
+            }
+        };
+        fetchLatestReport();
+    }, []);
+
     return (
         <header className="sticky top-0 z-50 w-full border-b border-zinc-800 bg-[#0B0C10]">
             <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-8">
@@ -188,7 +206,7 @@ export function MegaMenu() {
                                             {/* Column 1 — Knowledge Base */}
                                             <div className="flex flex-col space-y-4">
                                                 <h4 className="text-sm font-semibold tracking-tight text-white uppercase opacity-80">Knowledge Base</h4>
-                                                <Link href="/resources" className="block rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white">
+                                                <Link href="/resources?category=Blog" className="block rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white">
                                                     Blog & Articles
                                                 </Link>
                                                 <Link href="/resources" className="block rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white">
@@ -202,14 +220,14 @@ export function MegaMenu() {
                                             {/* Column 2 — Insights & Proofs */}
                                             <div className="flex flex-col space-y-4">
                                                 <h4 className="text-sm font-semibold tracking-tight text-white uppercase opacity-80">Insights &amp; Proofs</h4>
-                                                <Link href="/resources" className="block rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white">
+                                                <Link href="/resources?category=Customer+Stories" className="block rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white">
                                                     Customer Success Stories
                                                 </Link>
-                                                <Link href="/resources" className="block rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white">
+                                                <Link href="/resources?category=Whitepapers" className="block rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white">
                                                     Whitepapers
                                                 </Link>
-                                                <Link href="/resources" className="block rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white">
-                                                    Autonomous Finance Reports
+                                                <Link href="/resources?category=Product+Updates" className="block rounded-md px-3 py-2 text-sm text-zinc-400 transition hover:bg-white/5 hover:text-white">
+                                                    Product Updates
                                                 </Link>
                                             </div>
 
@@ -217,20 +235,37 @@ export function MegaMenu() {
 
                                         {/* Right Section — Featured Card */}
                                         <div className="w-[280px] bg-white/[0.02] border-l border-zinc-800/50 p-6">
-                                            <Link href="/resources" className="group flex flex-col rounded-lg border border-zinc-800/60 bg-[#11121A] p-5 transition-all hover:border-[#E5F33D]/40 hover:bg-white/5">
-                                                <span className="mb-3 inline-block w-fit rounded-md bg-[#E5F33D]/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#E5F33D]">
-                                                    New Report
-                                                </span>
-                                                <span className="mb-2 text-sm font-bold text-white group-hover:text-[#E5F33D] transition-colors">
-                                                    2026 Enterprise CFO Outlook.
-                                                </span>
-                                                <p className="mb-4 text-xs leading-relaxed text-zinc-500">
-                                                    The future of autonomous finance based on a survey of 500+ CFOs.
-                                                </p>
-                                                <span className="mt-auto text-xs font-semibold text-[#E5F33D] transition-colors group-hover:text-white">
-                                                    Read Report →
-                                                </span>
-                                            </Link>
+                                            {featuredReport ? (
+                                                <Link href={`/resources/${featuredReport.slug}`} className="group flex flex-col rounded-lg border border-zinc-800/60 bg-[#11121A] p-5 transition-all hover:border-[#E5F33D]/40 hover:bg-white/5">
+                                                    <span className="mb-3 inline-block w-fit rounded-md bg-[#E5F33D]/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#E5F33D]">
+                                                        New {featuredReport.category}
+                                                    </span>
+                                                    <span className="mb-2 text-sm font-bold text-white group-hover:text-[#E5F33D] transition-colors">
+                                                        {featuredReport.title}
+                                                    </span>
+                                                    <p className="mb-4 text-xs leading-relaxed text-zinc-500">
+                                                        {featuredReport.content ? featuredReport.content.substring(0, 80) + '...' : ''}
+                                                    </p>
+                                                    <span className="mt-auto text-xs font-semibold text-[#E5F33D] transition-colors group-hover:text-white">
+                                                        Read {featuredReport.category} →
+                                                    </span>
+                                                </Link>
+                                            ) : (
+                                                <Link href="/resources" className="group flex flex-col rounded-lg border border-zinc-800/60 bg-[#11121A] p-5 transition-all hover:border-[#E5F33D]/40 hover:bg-white/5">
+                                                    <span className="mb-3 inline-block w-fit rounded-md bg-[#E5F33D]/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#E5F33D]">
+                                                        New Report
+                                                    </span>
+                                                    <span className="mb-2 text-sm font-bold text-white group-hover:text-[#E5F33D] transition-colors">
+                                                        2026 Enterprise CFO Outlook.
+                                                    </span>
+                                                    <p className="mb-4 text-xs leading-relaxed text-zinc-500">
+                                                        The future of autonomous finance based on a survey of 500+ CFOs.
+                                                    </p>
+                                                    <span className="mt-auto text-xs font-semibold text-[#E5F33D] transition-colors group-hover:text-white">
+                                                        Read Report →
+                                                    </span>
+                                                </Link>
+                                            )}
                                         </div>
 
                                     </div>

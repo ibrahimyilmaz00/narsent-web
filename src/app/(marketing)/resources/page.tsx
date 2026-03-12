@@ -1,77 +1,75 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { ArrowRight, BookOpen, FileText, Newspaper, Rocket, Clock } from "lucide-react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { Reveal } from "@/src/components/ui/reveal";
+
+import { getBlogs } from "@/src/app/actions/blog";
 
 const categories = ["All", "Customer Stories", "Blog", "Whitepapers", "Product Updates"];
 
-const articles = [
-    {
-        slug: "dual-scoring-engine",
-        category: "Whitepaper",
-        readTime: "8 min read",
-        title: "Dual Scoring Engine: The End of Traditional Credit Scoring",
-        description:
-            "Discover how Narsent's dual-layer scoring engine delivers 127% more precise risk detection compared to static credit scores.",
-        color: "text-purple-400",
-        bg: "bg-purple-500/10",
-    },
-    {
-        slug: "13-week-liquidity-playbook",
-        category: "Blog",
-        readTime: "5 min read",
-        title: "13-Week Liquidity Playbook for CFOs",
-        description:
-            "How rolling forecast methodology is applied in modern finance teams and the steps from Excel to autonomous intelligence.",
-        color: "text-cyan-400",
-        bg: "bg-cyan-500/10",
-    },
-    {
-        slug: "horizon-ai-v2-4",
-        category: "Product Update",
-        readTime: "3 min read",
-        title: "Horizon AI v2.4: Autonomous Root-Cause Analysis",
-        description:
-            "The latest release introduces a root-cause analysis engine that traces cashflow deviations to their source in seconds.",
-        color: "text-emerald-400",
-        bg: "bg-emerald-500/10",
-    },
-    {
-        slug: "retail-giant-x-case-study",
-        category: "Customer Story",
-        readTime: "6 min read",
-        title: "Retail Giant X Cut Collection Times by 40%",
-        description:
-            "Read how a 500+ store retail chain optimized DSO using Narsent Pre-emptive Alerting.",
-        color: "text-amber-400",
-        bg: "bg-amber-500/10",
-    },
-    {
-        slug: "explainable-ai-in-finance",
-        category: "Whitepaper",
-        readTime: "10 min read",
-        title: "Why Explainable AI (XAI) Is Essential in Finance",
-        description:
-            "From black-box models to transparent intelligence: regulatory expectations, audit trails, and NLP-based decision summaries.",
-        color: "text-purple-400",
-        bg: "bg-purple-500/10",
-    },
-    {
-        slug: "multi-bank-visibility",
-        category: "Blog",
-        readTime: "4 min read",
-        title: "Multi-Bank Visibility: All Banks on One Screen",
-        description:
-            "Exploring the technical infrastructure of multi-bank consolidation through open banking APIs and Swift integrations.",
-        color: "text-cyan-400",
-        bg: "bg-cyan-500/10",
-    },
-];
+const getCategoryStyles = (category: string) => {
+    switch (category) {
+        case "Whitepaper": return { color: "text-purple-400", bg: "bg-purple-500/10" };
+        case "Blog": return { color: "text-cyan-400", bg: "bg-cyan-500/10" };
+        case "Product Update": return { color: "text-emerald-400", bg: "bg-emerald-500/10" };
+        case "Customer Story": return { color: "text-amber-400", bg: "bg-amber-500/10" };
+        default: return { color: "text-zinc-400", bg: "bg-zinc-500/10" };
+    }
+};
 
-export default function ResourcesPage() {
-    const [activeCategory, setActiveCategory] = useState("All");
+function ResourcesContent() {
+    const searchParams = useSearchParams();
+    const initialCategory = searchParams.get("category") || "All";
+
+    const [activeCategory, setActiveCategory] = useState(initialCategory);
+    const [articles, setArticles] = useState<any[]>([]);
+    const [featuredArticle, setFeaturedArticle] = useState<any | null>(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchBlogs = async () => {
+            try {
+                const data = await getBlogs(false);
+                const formatted = data.map((blog: any) => {
+                    const wordCount = blog.content ? blog.content.split(/\s+/).length : 0;
+                    const readTime = Math.max(1, Math.ceil(wordCount / 200));
+                    const styles = getCategoryStyles(blog.category);
+
+                    return {
+                        id: blog.id,
+                        slug: blog.slug,
+                        category: blog.category,
+                        readTime: `${readTime} min read`,
+                        title: blog.title,
+                        description: blog.content ? blog.content.substring(0, 120) + '...' : '',
+                        color: styles.color,
+                        bg: styles.bg,
+                    };
+                });
+
+                // Find latest case study or whitepaper for featured, fallback to latest post
+                const featured = formatted.find((a: any) => a.category === "Customer Story" || a.category === "Whitepaper") || formatted[0];
+                setFeaturedArticle(featured || null);
+                setArticles(formatted);
+            } catch (error) {
+                console.error("Failed to fetch public blogs", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchBlogs();
+    }, []);
+
+    useEffect(() => {
+        const cat = searchParams.get("category");
+        if (cat && categories.includes(cat)) {
+            setActiveCategory(cat);
+        }
+    }, [searchParams]);
 
     const filteredArticles =
         activeCategory === "All"
@@ -125,55 +123,57 @@ export default function ResourcesPage() {
             </section>
 
             {/* Featured Story */}
-            <section className="px-4 py-16">
-                <div className="container mx-auto max-w-6xl">
-                    <Reveal direction="up">
-                        <div className="group grid grid-cols-1 overflow-hidden rounded-2xl border border-zinc-800 bg-[#11121A] transition-all duration-300 hover:border-zinc-700 lg:grid-cols-2">
-                            {/* Left — Visual */}
-                            <div className="relative flex h-64 items-center justify-center overflow-hidden bg-gradient-to-br from-sky-950/30 via-[#11121A] to-purple-950/20 lg:h-auto">
-                                <div
-                                    className="pointer-events-none absolute inset-0 opacity-[0.04]"
-                                    style={{
-                                        backgroundImage:
-                                            "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)",
-                                        backgroundSize: "24px 24px",
-                                    }}
-                                />
-                                <div className="pointer-events-none absolute h-48 w-48 rounded-full bg-sky-500/10 blur-[80px]" />
-                                <div className="relative z-10 flex flex-col items-center gap-3">
-                                    <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-sky-500/20 bg-sky-500/10 text-sky-400">
-                                        <BookOpen className="h-10 w-10" />
+            {featuredArticle && (
+                <section className="px-4 py-16">
+                    <div className="container mx-auto max-w-6xl">
+                        <Reveal direction="up">
+                            <div className="group grid grid-cols-1 overflow-hidden rounded-2xl border border-zinc-800 bg-[#11121A] transition-all duration-300 hover:border-zinc-700 lg:grid-cols-2">
+                                {/* Left — Visual */}
+                                <div className="relative flex h-64 items-center justify-center overflow-hidden bg-gradient-to-br from-sky-950/30 via-[#11121A] to-purple-950/20 lg:h-auto">
+                                    <div
+                                        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+                                        style={{
+                                            backgroundImage:
+                                                "radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)",
+                                            backgroundSize: "24px 24px",
+                                        }}
+                                    />
+                                    <div className="pointer-events-none absolute h-48 w-48 rounded-full bg-sky-500/10 blur-[80px]" />
+                                    <div className="relative z-10 flex flex-col items-center gap-3">
+                                        <div className={`flex h-20 w-20 items-center justify-center rounded-2xl border ${featuredArticle.color.replace('text-', 'border-').replace('400', '500/20')} ${featuredArticle.bg} ${featuredArticle.color}`}>
+                                            {featuredArticle.category === "Whitepaper" && <FileText className="h-10 w-10" />}
+                                            {featuredArticle.category === "Blog" && <Newspaper className="h-10 w-10" />}
+                                            {featuredArticle.category === "Product Update" && <Rocket className="h-10 w-10" />}
+                                            {featuredArticle.category === "Customer Story" && <BookOpen className="h-10 w-10" />}
+                                        </div>
+                                        <span className={`text-xs font-bold uppercase ${featuredArticle.color}/60`}>FEATURED {featuredArticle.category}</span>
                                     </div>
-                                    <span className="text-xs font-bold text-sky-400/60">FEATURED CASE STUDY</span>
+                                </div>
+
+                                {/* Right — Content */}
+                                <div className="flex flex-col justify-center p-8 md:p-12">
+                                    <span className={`mb-4 inline-block w-fit rounded-md px-3 py-1 text-xs font-bold ${featuredArticle.bg} ${featuredArticle.color}`}>
+                                        {featuredArticle.category}
+                                    </span>
+                                    <h2 className="mb-4 text-2xl font-bold text-white md:text-3xl">
+                                        {featuredArticle.title}
+                                    </h2>
+                                    <p className="mb-8 max-w-lg text-sm leading-relaxed text-zinc-400">
+                                        {featuredArticle.description}
+                                    </p>
+                                    <Link
+                                        href={`/resources/${featuredArticle.slug}`}
+                                        className="inline-flex items-center gap-2 text-sm font-semibold text-[#E5F33D] transition-colors hover:text-white"
+                                    >
+                                        Read {featuredArticle.category}
+                                        <ArrowRight className="h-4 w-4" />
+                                    </Link>
                                 </div>
                             </div>
-
-                            {/* Right — Content */}
-                            <div className="flex flex-col justify-center p-8 md:p-12">
-                                <span className="mb-4 inline-block w-fit rounded-md bg-amber-400/10 px-3 py-1 text-xs font-bold text-amber-400">
-                                    Customer Story
-                                </span>
-                                <h2 className="mb-4 text-2xl font-bold text-white md:text-3xl">
-                                    How a Global Logistics Leader Cut DSO from 45 to 30 Days
-                                    with Narsent
-                                </h2>
-                                <p className="mb-8 max-w-lg text-sm leading-relaxed text-zinc-400">
-                                    The transformation story of X Logistics — eliminating manual
-                                    reconciliation and securing collections with an autonomous
-                                    early warning system.
-                                </p>
-                                <Link
-                                    href="/resources/retail-giant-x-case-study"
-                                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#E5F33D] transition-colors hover:text-white"
-                                >
-                                    Read Case Study
-                                    <ArrowRight className="h-4 w-4" />
-                                </Link>
-                            </div>
-                        </div>
-                    </Reveal>
-                </div>
-            </section>
+                        </Reveal>
+                    </div>
+                </section>
+            )}
 
             {/* Articles Grid */}
             <section className="px-4 py-16 md:py-24">
@@ -268,5 +268,13 @@ export default function ResourcesPage() {
                 </div>
             </section>
         </div>
+    );
+}
+
+export default function ResourcesPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-[#0B0C10] flex items-center justify-center text-white">Loading...</div>}>
+            <ResourcesContent />
+        </Suspense>
     );
 }
