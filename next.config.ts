@@ -11,3 +11,4 @@ const nextConfig: any = {
 };
 
 export default nextConfig;
+// Final deployment fix: 2026-03-12 16:47
