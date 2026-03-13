@@ -14,6 +14,7 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import { MobileMenu } from "./MobileMenu";
 
 // Reusable menu item component
 const ListItem = React.forwardRef<
@@ -45,6 +46,8 @@ ListItem.displayName = "ListItem";
 export function MegaMenu() {
     const [featuredReport, setFeaturedReport] = useState<any | null>(null);
 
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
     useEffect(() => {
         const fetchLatestReport = async () => {
             try {
@@ -70,8 +73,8 @@ export function MegaMenu() {
                     </Link>
                 </div>
 
-                {/* Center Menu */}
-                <div className="hidden md:flex flex-1 justify-center">
+                {/* Center Menu (Desktop) */}
+                <div className="hidden lg:flex flex-1 justify-center">
                     <NavigationMenu>
                         <NavigationMenuList className="gap-2">
                             <NavigationMenuItem>
@@ -280,8 +283,8 @@ export function MegaMenu() {
                     </NavigationMenu>
                 </div>
 
-                {/* Right CTA */}
-                <div className="flex items-center gap-4">
+                {/* Desktop CTA */}
+                <div className="hidden lg:flex items-center gap-4">
                     <Link
                         href="/login"
                         className="text-sm font-medium text-zinc-400 transition-colors hover:text-white"
@@ -295,6 +298,20 @@ export function MegaMenu() {
                         Request Demo
                     </Link>
                 </div>
+
+                {/* Mobile Menu Button */}
+                <div className="flex items-center lg:hidden">
+                    <button
+                        onClick={() => setIsMobileMenuOpen(true)}
+                        className="rounded-md p-2 text-zinc-400 hover:bg-white/5 hover:text-white transition-colors"
+                        aria-label="Open menu"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>
+                    </button>
+                </div>
+
+                {/* Mobile Menu Overlay */}
+                <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
             </div>
         </header>
     );
