@@ -62,7 +62,7 @@ export function HeroSection() {
 
                                     {/* Dashboard Placeholder Content */}
                                     <div className="flex flex-col items-center justify-center opacity-40">
-                                        <h3 className="text-xl sm:text-2xl md:text-4xl font-semibold text-[#4F46E5] mb-2 tracking-tight">Financial Dashboard Preview</h3>
+                                        <h2 className="text-xl sm:text-2xl md:text-4xl font-semibold text-[#4F46E5] mb-2 tracking-tight">Financial Dashboard Preview</h2>
                                         <p className="text-zinc-300 font-medium tracking-wide">Watch Demo Video</p>
                                     </div>
 
@@ -102,7 +102,7 @@ export function HeroSection() {
                                 <div className="h-3 w-3 rounded-full bg-[#27C93F]" />
                             </div>
                             <div className="flex flex-col items-center justify-center opacity-40">
-                                <h3 className="text-xl sm:text-2xl md:text-4xl font-semibold text-[#4F46E5] mb-2 tracking-tight">Financial Dashboard Preview</h3>
+                                <h2 className="text-xl sm:text-2xl md:text-4xl font-semibold text-[#4F46E5] mb-2 tracking-tight">Financial Dashboard Preview</h2>
                                 <p className="text-zinc-300 font-medium tracking-wide">Watch Demo Video</p>
                             </div>
                             <div className="absolute inset-0 flex items-center justify-center bg-black/20">

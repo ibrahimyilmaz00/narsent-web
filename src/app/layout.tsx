@@ -13,8 +13,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Narsent Workspace",
-    description: "Autonomous Financial Reasoning Platform",
+    title: "Narsent | Modern Financial Reporting & Cashflow Management",
+    description: "Narsent is a modern financial reporting, AI-powered cashflow management, and autonomous financial reasoning platform for fast-growing businesses.",
+    openGraph: {
+        title: "Narsent | Modern Financial Reporting & Cashflow Management",
+        description: "Narsent is a modern financial reporting, AI-powered cashflow management, and autonomous financial reasoning platform for fast-growing businesses.",
+        url: "https://narsent.com",
+        siteName: "Narsent Workspace",
+        images: [
+            {
+                url: "https://narsent.com/og-image.webp",
+                width: 1200,
+                height: 630,
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Narsent | Modern Financial Reporting & Cashflow Management",
+        description: "Narsent is a modern financial reporting, AI-powered cashflow management, and autonomous financial reasoning platform for fast-growing businesses.",
+        images: ["https://narsent.com/og-image.webp"],
+    },
 };
 
 export default function RootLayout({
