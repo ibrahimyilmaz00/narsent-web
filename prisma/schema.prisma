@@ -21,8 +21,10 @@ model Blog {
   content     String   @db.Text
   category    String   @default("Blog")
   author      String   @default("Admin")
-  coverImage  String?
-  publishedAt DateTime?
+  coverImage      String?
+  metaTitle       String?
+  metaDescription String?  @db.Text
+  publishedAt     DateTime?
   status      String   @default("Draft") // Draft, Published
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt

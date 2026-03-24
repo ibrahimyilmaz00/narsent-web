@@ -9,7 +9,7 @@ const isAdmin = async () => {
     return cookieStore.get('narsent_session')?.value === 'authenticated';
 };
 
-export async function createBlog(data: { title: string; slug: string; content: string; category?: string; author?: string; coverImage?: string; status: string }) {
+export async function createBlog(data: { title: string; slug: string; content: string; category?: string; author?: string; coverImage?: string; metaTitle?: string; metaDescription?: string; status: string }) {
     if (!(await isAdmin())) throw new Error('Unauthorized');
 
     return await prisma.blog.create({
@@ -20,7 +20,7 @@ export async function createBlog(data: { title: string; slug: string; content: s
     });
 }
 
-export async function updateBlog(id: string, data: { title?: string; slug?: string; content?: string; category?: string; author?: string; coverImage?: string; status?: string }) {
+export async function updateBlog(id: string, data: { title?: string; slug?: string; content?: string; category?: string; author?: string; coverImage?: string; metaTitle?: string; metaDescription?: string; status?: string }) {
     if (!(await isAdmin())) throw new Error('Unauthorized');
 
     return await prisma.blog.update({
